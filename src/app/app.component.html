@@ -1,7 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <body>
 
-
-<app-user-profil></app-user-profil>
+<ng-template [appDisplayMovies]="DisplayMoviesGreat">
+<ul>
+    <li appHightLight>Heat</li>
+    <li>Truands</li>
+    <li [ngClass]="{'vital': isThisMovie}" [ngStyle]="{backgroundColor: isThisMovie ? 'grey' : 'yellow'}">American gangster</li>
+    <li >American history X</li>
+</ul>
+</ng-template>
 
 </body>
