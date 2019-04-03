@@ -9,6 +9,23 @@ import { UserProfilComponent } from './user-profil/user-profil.component';
 import { AttributeDirective } from './attribute.directive';
 import { HightLightDirective } from './hight-light.directive';
 import { DisplayMoviesDirective } from './display-movies.directive';
+import { MenuComponent } from './menu/menu.component';
+import { Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
+
+
+
+const ROUTES: Routes = [
+  { path: 'signup', component: SignUP2Component },
+  { path: 'user', component: UserProfilComponent },
+  {
+    path: '',
+    redirectTo: '/user',
+    pathMatch: 'full'
+  },
+ 
+];
+
 
 
 @NgModule({
@@ -20,12 +37,15 @@ import { DisplayMoviesDirective } from './display-movies.directive';
     AttributeDirective,
     HightLightDirective,
     DisplayMoviesDirective,
+    MenuComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
+ 
   
   ],
   providers: [],
