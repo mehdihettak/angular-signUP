@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-sign-up2',
   templateUrl: './sign-up2.component.html',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUP2Component implements OnInit {
 
-  
+  email:string = ""
+  user:string = ""
+
+onSubmit() {
+  alert('SUCCES!! :-)')
+
+}
 
   constructor() { }
 

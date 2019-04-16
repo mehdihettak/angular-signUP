@@ -1,2 +1,30 @@
+<h1>email renseigné dans input</h1>
+<br><br>
+<!--------------------------------------------email form---------------------------------------------------------------------- -->
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="email" #Email="ngModel" required email />
+                <div *ngIf="f.submitted && Email.invalid" class="invalid-feedback">
+                        <br>
+                        <div *ngIf="Email.errors.required">Le champ est requis</div>
+                        <div *ngIf="Email.errors.email">Le champ email est invalide</div>
+                </div>
+        </div>
+        <!---------------------------------------------username form---------------------------------------------------------------------- -->
+        <br><br><br>
+        <div class="form-group">
+                <label for="user">First Name</label>
+                <input type="text" class="form-control" name="user" [(ngModel)]="user"
+                        #User="ngModel" minlength ="4" maxlength="25" required />
+                <div *ngIf="f.submitted && User.invalid" class="invalid-feedback">
+                        <br>
+                        <div *ngIf="User.errors.required">Le champ est requis</div>
+                        <div *ngIf="User.errors.minlength">Le champ user ne doit pas dépasser 4 caractères</div>
+                        <div *ngIf="User.errors.maxlength">Le champ user ne doit pas dépasser 25 caractères</div>
+                </div>
+        </div>
+        <br><br><br><br>
+        <button type='submit'>sauvegarder</button>
 
-<h1>email renseigné dans input</h1><input type="email" name ="email"/>
+</form>
